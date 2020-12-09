@@ -1,0 +1,39 @@
+{
+  "path": "/api/timeline",
+  "method": "GET",
+  "body": {
+    "propostaId": 26356367,
+    "celularValidado": false,
+    "emAndamento": false,
+    "assinado": false,
+    "valorAlteradoNaMesa": true,
+    "statusAnaliseAutomatica": "SCORE_CLIENTE_VAZIO",
+    "timeline":[
+      {
+        "id":15,"descricao":"RESULTADO PARCIAL PENDENTE",
+        "descricaoExterna":"Pré cadastro",
+        "etapaAtual":true,
+        "detalheDescricao":"Score do cliente vazio",
+        "possuiAcao":false
+      },
+      {
+        "id":0,
+        "descricaoExterna":"Simulação",
+        "etapaAtual":false,
+        "possuiAcao":false
+      },
+      {
+        "id":0,
+        "descricaoExterna":"Vistoria Online",
+        "etapaAtual":false,
+        "possuiAcao":false
+      },
+      {
+        "id":0,
+        "descricaoExterna":"Contrato",
+        "etapaAtual":false,
+        "possuiAcao":false
+      }
+    ]
+  }
+}

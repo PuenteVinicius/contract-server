@@ -2,6 +2,8 @@ const jsonServer = require("json-server");
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 3000;
+const fs = require("fs");
+const dir = "./contracts/";
 
 server.use(jsonServer.bodyParser);
 server.use(middlewares);
@@ -10,9 +12,34 @@ server.listen(port, () => {
   console.log("JSON Server is running", port);
 });
 
-server.get("/timeline", (request, response) => {
-  if (request.method === "GET") {
-    const timeline = require("./timeline/index");
-    response.status(200).json(timeline());
+init();
+
+function init() {
+  fs.readdir(dir, (err, items) => {
+    if(err) {
+      console.log('err', errr);
+    }
+    items.forEach((file) => {
+      fs.readFile(dir + file, 'utf8' , (err, contract) => {
+        if(err) {
+          console.log('err', errr);
+        }
+        return createRequest(contract);
+      });
+    })
+  })
+}
+
+function createRequest(data) {
+  const contract = JSON.parse(data);
+  if(contract.method === 'GET') {
+    server.get(contract.path, (request, response) => {
+      if(request.method === 'GET') {
+        const data = contract.body;
+        return response.status(200).json(data);
+      }
+    })
   }
-});
+}
+
+
