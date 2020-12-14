@@ -35,11 +35,36 @@ function createRequest(data) {
   if(contract.method === 'GET') {
     server.get(contract.path, (request, response) => {
       if(request.method === 'GET') {
+        const data = contract.response;
+        return response.status(200).json(data);
+      }
+    })
+  }
+  if(contract.method === 'POST') {
+    server.get(contract.path, (request, response) => {
+      if(request.method === 'POST') {
+        const data = contract.body;
+        return response.status(200).json(data);
+      }
+    })
+  }
+  if(contract.method === 'PUT') {
+    server.get(contract.path, (request, response) => {
+      if(request.method === 'PUT') {
+        const data = contract.body;
+        return response.status(200).json(data);
+      }
+    })
+  }
+  if(contract.method === 'DELETE') {
+    server.get(contract.path, (request, response) => {
+      if(request.method === 'DELETE') {
         const data = contract.body;
         return response.status(200).json(data);
       }
     })
   }
 }
+  
 
 

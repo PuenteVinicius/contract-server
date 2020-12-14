@@ -1,7 +1,7 @@
 {
   "path": "/api/cliente",
   "method": "GET",
-  "body": {
+  "response": {
     "cpf": "52863077368",
     "nome": "LUCI",
     "RG":"45.951.799-x"

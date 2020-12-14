@@ -7,7 +7,7 @@
     "emAndamento": false,
     "assinado": false,
     "valorAlteradoNaMesa": true,
-    "statusAnaliseAutomatica": "SCORE_CLIENTE_VAZIO",
+    "statusAnaliseAutomatica": "LOJA_PRODUTO_NAO_PERMITIDO",
     "timeline":[
       {
         "id":15,"descricao":"RESULTADO PARCIAL PENDENTE",

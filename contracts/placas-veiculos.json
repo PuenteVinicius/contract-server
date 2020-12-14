@@ -1,0 +1,9 @@
+{
+  "path": "/api/placas-veiculos",
+  "method": "GET",
+  "response": {
+    "carro": "celta",
+    "cor": "cereja",
+    "placa":"JYB-2001"
+  }
+}

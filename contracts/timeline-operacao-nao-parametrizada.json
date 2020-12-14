@@ -7,7 +7,7 @@
     "emAndamento": false,
     "assinado": false,
     "valorAlteradoNaMesa": true,
-    "statusAnaliseAutomatica": "SCORE_CLIENTE_VAZIO",
+    "statusAnaliseAutomatica": "OPERACAO_NAO_PARAMETRIZADA",
     "timeline":[
       {
         "id":15,"descricao":"RESULTADO PARCIAL PENDENTE",

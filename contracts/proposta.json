@@ -1,7 +1,7 @@
 {
   "path": "/api/proposta",
   "method": "GET",
-  "body": {
+  "response": {
     "id": 26357665,
     "lojista": {
       "id": 8200332,
