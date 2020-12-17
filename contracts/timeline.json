@@ -1,16 +1,34 @@
 {
-  "path": "/api/timeline",
+  "path": "/api/proposta/timeline",
   "method": "GET",
+  "statusAnaliseAutomatica": [
+    "SUCESSO", 
+    "PLACA_INVALIDA",
+    "FIPE_NOT_FOUND",
+    "FORA_POLITICA_INTERNA",
+    "PRODUTO_NAO_PERMITIDO",
+    "LOJA_PRODUTO_NAO_PERMITIDO",
+    "OPERACAO_NAO_PARAMETRIZADA",
+    "SCORE_EXTERNO_NAO_ENCONTRADO",
+    "SCORE_CLIENTE_VAZIO",
+    "FONTE_ANALISE_NAO_IDENTIFICADA",
+    "CRIVO_ERRO",
+    "ANALISE_ERRO",
+    "GARANTIA_RECUSADA",
+    "FAIL",
+    "VALOR_SOLICITADO_NAO_PERMITIDO"
+  ],
   "response": {
     "propostaId": 26356367,
     "celularValidado": false,
     "emAndamento": false,
     "assinado": false,
     "valorAlteradoNaMesa": true,
-    "statusAnaliseAutomatica": "SCORE_CLIENTE_VAZIO",
+    "statusAnaliseAutomatica": "LOJA_PRODUTO_NAO_PERMITIDO",
     "timeline":[
       {
-        "id":15,"descricao":"RESULTADO PARCIAL PENDENTE",
+        "id":15,
+        "descricao":"RESULTADO PARCIAL PENDENTE",
         "descricaoExterna":"Pré cadastro",
         "etapaAtual":true,
         "detalheDescricao":"Score do cliente vazio",
@@ -37,3 +55,4 @@
     ]
   }
 }
+

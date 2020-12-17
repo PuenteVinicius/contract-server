@@ -1,0 +1,13 @@
+{
+  "path": "/api/post",
+  "method": "DELETE",
+  "response": {
+    "success": true
+  },
+  "body": {
+    "placa": "DRDE-4341",
+    "chassi": "GJDIRLFJE840-KFI",
+    "cor": "vermelho"
+  }
+}
+
