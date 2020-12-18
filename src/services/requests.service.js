@@ -1,36 +1,35 @@
-import { REQUESTS } from '../configs/constants';
 
 export default class RequestService {
-  GET(contract) {
+  get(contract) {
     server.get(contract.path, (request, response) => {
       return response.status(200).json(contract.response);
     });
   }
-  
-   POST(contract) {
+
+  post(contract) {
     server.post(contract.path, (request, response) => {
       this.resquestMount(contract, request, response);
     });
   }
-  
-   PUT(contract) {
+
+  put(contract) {
     server.put(contract.path, (request, response) => {
       this.resquestMount(contract, request, response);
     });
   }
-  
-   DELETE(contract) {
+
+  delete(contract) {
     server.delete(contract.path, (request, response) => {
-      return response.send({success: true});
-    }); 
+      return response.send({ success: true });
+    });
   }
   getRequests() {
     return {
-      [REQUESTS.GET] : this.GET,
-      [REQUESTS.POST] : this.POST,
-      [REQUESTS.PUT] : this.PUT,
-      [REQUESTS.DELETE] : this.DELETE,
-    }
+      GET: this.get,
+      POST: this.post,
+      PUT: this.put,
+      DELETE: this.delete,
+    };
   }
 
   resquestMount(contract, request, response) {

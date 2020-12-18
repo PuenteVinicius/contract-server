@@ -1,20 +1,39 @@
 const fs = require("fs");
-import { DIRECTORY } from '../configs/constants';
+import { DIRECTORY } from "../configs/constants";
 
 export default class ReadDirService {
-  readDir() {
-    fs.readdir(DIRECTORY, (err, items) => {
+  contracts = [];
+
+
+
+  async getContracts() {
+    let directory = await this.readDirectory();
+    let files = await this.readFiles(directory);
+    return Promise.all(files);
+  }
+
+
+  async readFiles(files) {
+    return files.map(file => {
+      return this.readFile(file);
+    });
+  }
+
+  async readDirectory() {
+    return fs.readdirSync(DIRECTORY, (err, files) => {
       if (err) {
-        console.log("err", errr);
+        console.log("err", err);
       }
-      items.forEach((file) => {
-        fs.readFile(DIRECTORY + file, "utf8", (err, contract) => {
-          if (err) {
-            console.log("err", errr);
-          }
-          return JSON.parse(data);
-        });
-      });
+      return files;
+    });
+  }
+
+  async readFile(file) {
+    return fs.readFileSync(DIRECTORY + file, "utf8", (err, contract) => {
+      if (err) {
+        console.log("err", err);
+      }
+      return contract;
     });
   }
 }
