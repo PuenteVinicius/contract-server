@@ -30,7 +30,7 @@ coverage
 
 # Bower dependency directory (https://bower.io/)
 bower_components
-
+contracts
 # node-waf configuration
 .lock-wscript
 
@@ -40,8 +40,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-contracts
-
+contracts/
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
