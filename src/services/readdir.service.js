@@ -3,19 +3,19 @@ import { DIRECTORY } from '../configs/constants';
 
 export default class ReadDirService {
 
-  async getContracts() {
+  static async getContracts() {
     let directory = await this.readDirectory();
     let files = await this.readFiles(directory);
     return Promise.all(files);
   }
 
-  async readFiles(files) {
+  static async readFiles(files) {
     return files.map(file => {
       return this.readFile(file);
     });
   }
 
-  async readDirectory() {
+  static async readDirectory() {
     return fs.readdirSync(DIRECTORY, (err, files) => {
       if (err) {
         console.log("err", err);
@@ -24,7 +24,7 @@ export default class ReadDirService {
     });
   }
 
-  async readFile(file) {
+  static async readFile(file) {
     return fs.readFileSync(DIRECTORY + file, "utf8", (err, contract) => {
       if (err) {
         console.log("err", err);

@@ -1,5 +1,5 @@
 {
-  "path": "/api/post",
+  "path": "/api/delete",
   "method": "DELETE",
   "response": {
     "success": true
