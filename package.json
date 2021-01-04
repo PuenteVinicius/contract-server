@@ -1,7 +1,7 @@
 {
-  "name": "omni-mock-server",
+  "name": "mock-server",
   "version": "1.0.0",
-  "description": "mock server para os produtos da omni",
+  "description": "mock server para utilizar no frontend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
