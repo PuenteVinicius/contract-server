@@ -1,17 +1,13 @@
-const fs = require("fs");
-import { DIRECTORY } from "../configs/constants";
+import fs  from 'fs';
+import { DIRECTORY } from '../configs/constants';
 
 export default class ReadDirService {
-  contracts = [];
-
-
 
   async getContracts() {
     let directory = await this.readDirectory();
     let files = await this.readFiles(directory);
     return Promise.all(files);
   }
-
 
   async readFiles(files) {
     return files.map(file => {

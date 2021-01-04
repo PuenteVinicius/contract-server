@@ -1,24 +1,23 @@
-
 export default class RequestService {
-  get(contract) {
+  get(contract, server) {
     server.get(contract.path, (request, response) => {
       return response.status(200).json(contract.response);
     });
   }
 
-  post(contract) {
+  post(contract, server) {
     server.post(contract.path, (request, response) => {
       this.resquestMount(contract, request, response);
     });
   }
 
-  put(contract) {
+  put(contract, server) {
     server.put(contract.path, (request, response) => {
       this.resquestMount(contract, request, response);
     });
   }
 
-  delete(contract) {
+  del(contract, server) {
     server.delete(contract.path, (request, response) => {
       return response.send({ success: true });
     });
@@ -28,7 +27,7 @@ export default class RequestService {
       GET: this.get,
       POST: this.post,
       PUT: this.put,
-      DELETE: this.delete,
+      DELETE: this.del,
     };
   }
 
@@ -38,5 +37,10 @@ export default class RequestService {
       return response.status(200).json(data);
     }
     return response.status(400).json("Wrong Object");
+  }
+
+  verifyMethod(contract, server) {
+    let requests = this.getRequests(); 
+    requests[contract.method](contract, server);
   }
 }
