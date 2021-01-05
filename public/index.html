@@ -1,53 +1,210 @@
 <html lang="pt">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
   <script src="./js/index.js"></script>
   <title>Documentação mock server</title>
 </head>
+
 <body>
   <main>
     <section class="menu">
       <nav class="navbar">
-        <img src="./nodejs-icon.svg" alt="node js svg" class="navbar__image">
+        <img src="./nodejs-icon.svg" alt="node js svg" class="navbar__image" />
         <ul class="list">
-          <li class="list__item"><span>Welcome</span></li>
-          <li class="list__sub-item"><span>Introduction</span></li>
-          <li class="list__item"><span>Reference</span></li>
-          <li class="list__sub-item"><span>Change Endpoints</span></li>
-          <li class="list__sub-item"><span>Withdrawals Endpoints</span></li>
-          <li class="list__sub-item"><span>Rates</span></li>
-          <li class="list__sub-item"><span>Currencies</span></li>
+          <li class="list__item"><span>Overview</span></li>
+          <li class="list__sub-item"><a href="#introduction"><span>Introdução</span></a></li>
+          <li class="list__sub-item"><a href="#api"><span>Funcionamento da API</span></a></li>
+          <li class="list__item"><span>Referencia</span></li>
+          <li class="list__sub-item"><a href="#first-steps"><span>Primeiros Passos</span></a></li>
+          <li class="list__sub-item"><a href="#post-example"><span>POST</span></a></li>
+          <li class="list__sub-item"><a href="#put-example"><span>PUT</span></a></li>
+          <li class="list__sub-item"><a href="#delete-example"><span>DELETE</span></a></li>
         </ul>
       </nav>
     </section>
     <section class="text">
-      <div class="content" id="introduction">
-        <p class="content__subtitle">Welcome</p>
-        <h1 class="content__title">Introduction</h1>
-        <p class="content__text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Ea a maxime magni itaque, harum in voluptas provident recusandae 
-            nihil! Veniam repudiandae velit nesciunt autem id sequi dicta magni 
-            blanditiis mollitia?
-        </p>
-        <p class="content__text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Ea a maxime magni itaque, harum in voluptas provident recusandae 
-          nihil! Veniam repudiandae velit nesciunt autem id sequi dicta magni 
-          blanditiis mollitia?
-      </p>
-        <h2 class="content__sub-title">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        </h2>
+      <div class="content">
+        <div id="introduction">
+          <p class="content__subtitle">Overview</p>
+          <h1 class="content__title">Introdução</h1>
+          <p class="content__text">
+            A API de <i>mock server</i> ou <i>contract server</i>, é uma
+            simples API onde é possível mockar qualquer tipo de retorno
+            desejado a partir de um contrato <b>JSON</b> e de um verbo
+            <b>HTTP</b>. Essa API aceita como argumento arquivos JSON que
+            devem ter uma estrutura especifica (ver seção tal) que será
+            explicada nas seguintes seções.
+          </p>
+          <p class="content__text">
+            Essa API foi criada com um intuíto de se agilizar o trabalho de
+            desenvolvimento do front-end em conjunto com o back-end, a
+            principal ideia é que ambos profissionais definam um
+            <b>contrato</b> e seus possíveis retornos, para que o front-end
+            consiga livremente alterar o endpoint da forma que deseja sem
+            necessitar de pausar o backend em suas atividades.
+          </p>
+        </div>
+        <div id="api">
+          <h1 class="content__title">Funcionamento da API</h1>
+          <p class="content__text">
+            Para criar os retornos desejados todos os arquivos
+            <b>JSON</b> deverão ser criados na pasta contracts na raiz do
+            projeto, você pode criar ela manualmente, ou simplismente rodar o
+            comando $ npm start que o diretório será criado automaticamente,
+            seguindo a estrutura padrão que será vista na próxima seção será
+            possível escolher o retorno, da rquisição assim como o seu body, e
+            como seu verbo HTTP. Os verbos suportados até atual versão
+            (v.1.0.0) são: <b>GET</b>, <b>POST</b>, <b>PUT</b> e
+            <b>DELETE</b>.
+          </p>
+        </div>
+        <div id="first-steps">
+          <p class="content__subtitle">Referência</p>
+          <h1 class="content__title">Primeiros Passos</h1>
+          <p class="content__text">
+            Vamos supor que se é necessário criar um endoint que retorna uma
+            lista de placa de veículos, então o arquivo <b>placas.JSON</b> que será criado
+            no diretorio /contracts (pode possuir qualquer nome) deverá seguir
+            a seguinte estrutura:
+          <pre>
+<code>
+{ 
+  "path": "/placas", 
+  "method": "GET", 
+  "response": { 
+    "carro":
+    "celta", 
+    "placas": [
+      "JVT-4203",
+      "NFA-4120",
+      "AZG-2279",
+      "HOS-8411",
+      "NEK-7930"
+    ] 
+  } 
+}</code>
+          </pre>
+          </p>
+          <p class="content__sub-title">
+            Todo JSON terá os mesmos atributos <i><b>path</b></i>, <i> <b>method</b></i>, <i><b>response</b></i> e no
+            caso do
+            dos metódos <b>PUT</b> e <b>POST</b> o atributo <i><b>body</b> </i>segue a baixo uma lista do que cada
+            atributo serve:
+          </p>
+          <ul class="doc-list">
+            <li class="doc-list__item">
+              <p class="content__text">
+                <code><b>path:</b></code> rota em que request será feita.
+              </p>
+            </li>
+            <li class="doc-list__item">
+              <p class="content__text">
+                <code><b>method:</b></code> método <b>HTTP</b> que será utilizado podenso ser (<b>POST</b>, <b>GET</b>,
+                <b>PUT</b>, <b>DELETE</b>)
+              </p>
+            </li>
+            <li class="doc-list__item">
+              <p class="content__text">
+                <code><b>response:</b></code> a reposta esperada contrato.
+              </p>
+            </li>
+            <li class="doc-list__item">
+              <p class="content__text">
+                <code><b>body:</b></code> no caso dos métodos <b>PUT</b> e <b>POST</b> se refere ao body da requisição.
+              </p>
+            </li>
+            <li class="doc-list__item">
+              <p class="content__text">
+                <code><b>options(opcional):</b></code> nesse atributo pode-se colocar o que quiser, diferentes estados
+                para registro.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div id="post-example">
+          <h1 class="content__title">POST</h1>
+          <p class="content__text">
+            Agora vamos supor que se é necessário criar um endoint que cadastra um cliente:
+            <br><b>clientes.json</b>
+          <pre>
+<code>{
+  "path": "/clientes",
+  "method": "POST",
+  "response": "success",
+  "body": {
+    "nome": "Flávia Priscila Araújo",
+    "cpf": "390.177.376-20",
+    "rg": "38.821.892-7",
+    "sexo": "F",
+    "mae": "Maya Sophie",
+    "pai": "Bernardo Gael Márcio Araújo"
+  }
+}</code>
+          </pre>
+          </p>
+          <p class="content__text">
+            Agora é possível fazer uma requisição <b>POST</b> para o <b>/clientes</b> de acordo
+            com o que foi definido no body, caso envie algo diferente do contrato,
+            será retornado um erro.
+          </p>
+        </div>
+        <div id="put-example">
+          <h1 class="content__title">PUT</h1>
+          <p class="content__text">
+            Agora vamos ao mesmo exemplo do POST utilizando PUT.
+            <br><b>client-put.json</b>
+          <pre>
+<code>
+{
+  "path": "/clientes",
+  "method": "PUT",
+  "response": "success",
+  "body": {
+    "nome": "Flávia Araújo",
+    "cpf": "390.177.376-20",
+    "rg": "38.821.892-7",
+    "sexo": "F",
+    "mae": "Maya Sophie",
+    "pai": "Bernardo Gael Márcio Araújo"
+  }
+}</code>
+          </pre>
+          </p>
+          <p class="content__text">
+            Agora é possível fazer uma requisição <b>PUT</b> para o <b>/clientes</b> de acordo
+            com o que foi definido no body, caso envie algo diferente do contrato,
+            será retornado um erro.
+          </p>
+        </div>
+        <div id="delete-example">
+          <h1 class="content__title">DELETE</h1>
+          <p class="content__text">
+            Agora com um exemplo utilizando <b>DELETE</b>.
+            <br><b>client-delete.json</b>
+          <pre>
+<code>
+{ 
+  "path": "/cliente/c788023b-8d0e-4197-a288-6fc442d1a7b9", 
+  "method": "DELETE", 
+  "response": "success"
+}</code>
+          </pre>
+          </p>
+          <p class="content__text">
+            Agora é possível fazer uma requisição <b>DELETE</b> para o <b>/cliente/c788023b-8d0e-4197-a288-6fc442d1a7b9</b> e irá retorunar uma mensagem de sucesso
+          </p>
+        </div>
       </div>
-      <div class="content" id="introduction">
-      </div>
-    </div>
+    </section>
   </main>
 </body>
+
 </html>
