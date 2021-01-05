@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "-": "0.0.1",
+    "babel-node": "^0.0.1-security",
     "casual": "^1.6.2",
     "fs": "0.0.1-security",
     "json-server": "^0.16.3",
