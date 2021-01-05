@@ -5,22 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node ./index.js"
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js"
   },
   "author": "Vinicius Puente",
   "license": "ISC",
   "dependencies": {
-    "-": "0.0.1",
-    "babel-node": "^0.0.1-security",
-    "casual": "^1.6.2",
-    "fs": "0.0.1-security",
-    "json-server": "^0.16.3",
-    "nodemon": "^2.0.6",
-    "path": "^0.12.7",
-    "save-dev": "0.0.1-security",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/preset-env": "^7.12.11"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "json-server": "^0.16.3"
   }
 }

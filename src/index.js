@@ -1,5 +1,5 @@
-import ReadDirService from './src/services/readdir.service';
-import RequestService from './src/services/requests.service';
+import ReadDirService from './services/readdir.service';
+import RequestService from './services/requests.service';
 import jsonServer from 'json-server'
 
 const server = jsonServer.create();
