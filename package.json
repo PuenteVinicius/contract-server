@@ -1,0 +1,27 @@
+{
+  "name": "mock-server",
+  "version": "1.0.0",
+  "description": "mock server para utilizar no frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node ./index.js"
+  },
+  "author": "Vinicius Puente",
+  "license": "ISC",
+  "dependencies": {
+    "-": "0.0.1",
+    "casual": "^1.6.2",
+    "fs": "0.0.1-security",
+    "json-server": "^0.16.3",
+    "nodemon": "^2.0.6",
+    "path": "^0.12.7",
+    "save-dev": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11"
+  }
+}
