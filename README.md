@@ -3,7 +3,6 @@ Api de contract server
 
 > Status do Projeto: Finalizado
 
-Você pode ver o projeto rodando [aqui]().
 ## Tópicos
 
 -  [Descrição do projeto](https://github.com/PuenteVinicius/contract-server/blob/main/README.md#user-content-descrição-do-projeto)
