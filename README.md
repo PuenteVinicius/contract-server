@@ -18,6 +18,9 @@ Api de contract server
 ## Descrição do projeto
 
 Essa API foi criada com um intuíto de se agilizar o trabalho de desenvolvimento do front-end em conjunto com o back-end, a principal ideia é que ambos profissionais definam um contrato e seus possíveis retornos, para que o front-end consiga livremente alterar o endpoint da forma que deseja sem necessitar de pausar o backend em suas atividades
+
+**Documentaço da API é exibida assim que se rodar a aplicação)**  
+
 ## Funcionalidades
 
 - Mock de dos métodos GET POST PUT DELETE 
