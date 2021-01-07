@@ -21,13 +21,6 @@ Essa API foi criada com um intuíto de se agilizar o trabalho de desenvolvimento
 ## Funcionalidades
 
 - Mock de dos métodos GET POST PUT DELETE 
-## Deploy da Aplicação
-
-```
-$ heroku login
-```
-```
-$ git push heroku main
 ```
 
 ## Pré-requisitos
