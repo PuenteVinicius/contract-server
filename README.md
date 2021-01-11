@@ -36,9 +36,11 @@ No terminal, clone o projeto:
 ```
 git clone git clone git@github.com:PuenteVinicius/contract-server.git
 ```
+
 ```
 $ yarn
 ```
+
 ```
 $ yarn start
 ```
