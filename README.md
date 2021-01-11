@@ -1,3 +1,4 @@
+
 # API contract Server
 Api de contract server
 
@@ -24,7 +25,6 @@ Essa API foi criada com um intuíto de se agilizar o trabalho de desenvolvimento
 ## Funcionalidades
 
 - Mock de dos métodos GET POST PUT DELETE 
-```
 
 ## Pré-requisitos
 Node.JS + NPM
@@ -34,9 +34,8 @@ Node.JS + NPM
 No terminal, clone o projeto:
 
 ```
-git clone git clone git@github.com:PuenteVinicius/contract-server.git
+$ git clone git clone git@github.com:PuenteVinicius/contract-server.git
 ```
-
 ```
 $ yarn
 ```
