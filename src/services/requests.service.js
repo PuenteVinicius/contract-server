@@ -1,7 +1,7 @@
 export default class RequestService {
   static get(contract, server) {
     server.get(contract.path, (request, response) => {
-      return response.status(200).json(contract.response);
+      return response.status(contract.statusCode || 200).json(contract.response);
     });
   }
 
